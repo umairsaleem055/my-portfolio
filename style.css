@@ -1,0 +1,857 @@
+/* ================= Reset & Basic ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+   /* background: linear-gradient(105deg, #6700a3,#e02f75, #ff5a57, #fccbf0); */
+    background: linear-gradient(105deg, #003332,#034c36,#bdcdcf);
+     color: #e0e0e0; 
+    
+}
+
+/* ================= Header & Navigation ================= */
+header {
+     height: 100vh; /* Full screen height */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  /*  background: linear-gradient(135deg, #1f1c2c, #928dab); /* modern gradient */
+    color: white;
+    font-family: Arial, sans-serif;
+   /* background: linear-gradient(135deg, #1a1a2e, #0f111a); /* soft gradient */
+  /* background: linear-gradient(135deg, #48b7d5, #295161); */
+   /*background: linear-gradient(105deg, #FF5A57, #FCCBF0); */
+   /* background: linear-gradient(90deg, #ff8128,#e3b8b8, #f2e0df); */
+  background: linear-gradient(105deg, #e3b8b8, #003332 ) ; 
+}
+
+/* ================= NAVIGATION ================= */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;             
+  display: flex;
+  justify-content: center;   /* center nav */
+  align-items: center;       
+  background: rgba(15,17,26,0.75); 
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  
+}
+
+#navbar ul {
+  list-style:none;
+  display: flex;
+  gap: 2px;
+  flex-direction: row;
+ 
+}
+
+#navbar a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;  /* prevents text breaking */
+  padding: 6px 10px;      
+  border-radius: 999px;    
+  transition: color .2s, background-color .2s, transform .2s;
+}
+
+#navbar a:hover {
+  color: #45d2d2;
+  background-color: rgba(69,210,210,0.1);
+  transform: translateY(-2px);
+}
+
+/* ===== Shrunk capsule state ===== */
+#navbar.shrink {
+  width: fit-content;   
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%); /* center in screen */
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 9999px; 
+  background: rgba(15,17,26,0.6);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+#navbar.shrink ul { gap: 14px; }
+#navbar.shrink a {
+  font-size: 0.9rem;
+  padding: 4px 8px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  #navbar {
+    padding: 8px 6px;  
+  }
+
+  #navbar ul {
+    flex-direction: row;   /* stack vertically */
+    align-items: center;      /* center align */
+    gap: 12px;                /* vertical spacing */
+  }
+
+  #navbar a {
+    font-size: 0.85rem;
+    padding: 4px 6px;   
+  }
+
+  #navbar.shrink a{
+       
+    font-size: 0.7rem;
+  padding: 3px 5px;
+      
+
+  }
+  
+}
+
+
+
+
+
+/* ================= Hero Content ================= */
+
+.intro h1 {
+  font-size: clamp(1.8rem, 4vw, 5rem);
+  font-weight: bold;
+  
+  
+  margin: 10px 0;
+}
+
+.intro h2,
+.intro h3,
+.intro p {
+  margin: 5px 0;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro h3 {
+
+     font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 7rem); /* min 2rem, max 7rem, scales with screen */
+   color: #003332;
+
+
+  animation: fadeUp 1s ease-in-out forwards;
+}
+
+
+.name-line {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 15px;
+}
+
+
+
+
+.intro h2 {
+    font-size: 3rem;
+    color: #003332;
+    display: flex;
+ 
+  animation: fadeUp 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.intro h1 {
+      font-family: 'Montserrat', sans-serif; /* your font */
+      font-weight: bold;
+      align-items:  center;
+ color: white;
+
+
+   
+
+
+
+   font-size: 4rem;
+  /* typewriter essentials */
+  display: inline-block;        /* let width hug the text */
+  white-space: nowrap;          /* no wrap */
+  overflow: hidden;             /* hide the untyped part */
+  border-right: 3px solid currentColor; /* cursor */
+  
+  /* "Umair(5) + space(1) + Saleem(6) = 12" */
+  --chars: 12;
+
+  width: 0;  /* start hidden */
+  animation:
+    typing 5s steps(var(--chars), end) forwards,
+    blink 0.7s step-end infinite;
+  animation-delay: 1s; /* appears after "I am" */
+  animation-iteration-count: infinite; /* loop */
+  opacity: 1; /* ensure visible (no separate fade on h1) */
+
+}
+
+.intro p {
+    font-size: clamp(1rem, 2vw, 2rem);
+    display: flex;
+    justify-content: left;
+  animation: fadeUp 2s ease-in-out forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+  color: #003332;
+}
+
+/*@keyframes typing {
+  to { width: calc(var(--chars) * 1ch); } /* type exactly 12 "character units" */
+
+@keyframes typing {
+  0%   { width: 0ch; }
+  30%  { width: calc(var(--chars) * 1ch); } /* fully typed */
+  80%  { width: calc(var(--chars) * 1ch); } /* pause */
+  100% { width: 0ch; } /* erased */
+}
+
+
+
+@keyframes blink {
+  50% { border-color: transparent; }
+  
+}
+
+
+
+
+
+
+
+
+/* ====== ABOUT SECTION INTRO ====== */
+.intro-container {
+  display: flex;
+  
+   flex-direction: row; /* stack text and image on small screens */
+  justify-content:space-between;
+  align-items: stretch;   /* make text + image equal height */
+  padding: 0;
+  min-height: 40vh;
+  max-height: 50vh;
+  max-width: 1000px;
+  margin: 100px auto;
+  border-radius: 20px;
+  overflow: hidden; /* ensures shapes stay clean */
+   /* background: linear-gradient(90deg, #ff8128,#e3b8b8, #f2e0df);  */
+  background: linear-gradient(105deg, #e3b8b8, #003332 ) ; 
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2); /* ✨ card shadow */
+}
+
+/* Left block (text area) */
+.intro-text {
+  flex: 1;
+  padding: 50px;
+  background: white; /* matches parent background */
+}
+
+.intro-heading {
+  color: #003332;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.intro-paragraph {
+  font-size: 1rem;
+ 
+  
+  
+  
+  line-height: 1.6;
+  color: #003332;
+}
+
+/* Right block (image with half-rounded shape) */
+.intro-image {
+  flex: 0 0 auto;   /* allow resizing */
+
+  width: 50%;
+   
+  display: flex;
+  align-items:flex-end;
+  justify-content: flex-end;
+  background: white; /* same as parent */
+}
+
+.intro-image img.intro-profile {
+  width: auto;
+  height: 360px;
+  
+  object-fit:cover;
+
+  /* Perfect half-circle on the LEFT side */
+  border-radius: 50% 0 0 50%;
+}
+
+
+/* ===== Scroll Animation ===== */
+.intro-animate {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+/* Animate directions */
+[data-animate="fade-left"] {
+  transform: translateX(-120px);
+}
+[data-animate="fade-right"] {
+  
+  transform: translateX(120px);
+}
+
+/* When in view */
+.intro-animate.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+
+
+/* Tablets and below */
+@media (max-width: 1024px) {
+  #navbar {
+    padding: 12px 20px;
+  }
+  .intro-container {
+    flex-direction: row;
+  }
+  .intro-text {
+    flex-direction: row;
+    padding: 20px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  header {
+    height: 60vh; /* don’t force 100vh on small screens */
+    padding: 40px 20px;
+  }
+
+    .intro-image {
+    display: none;
+  }
+.intro-container{
+
+    min-height: 20vh;
+  max-height: 50vh;
+  max-width: 1000px;
+
+
+}
+
+.intro-heading{
+   
+  font-size: 1rem;
+  margin-bottom: 10px;
+
+}
+  .intro-paragraph{
+
+   font-size: small;
+    flex-direction: row;
+
+  }
+  .intro h3 { font-size: 2rem; }
+  .intro h2 { font-size: 1.2rem; }
+  .intro h1 { font-size: 2rem; }
+  .intro p  { font-size: 1rem; }
+
+  #navbar ul {
+    flex-direction: row;
+    gap: 12px;
+  }
+}
+
+
+/* same colur for eduaction and language etc */
+
+#color{
+
+
+background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light background */
+
+
+}
+
+
+
+
+
+
+
+
+/* ================= EDUCATION TIMELINE ================= */
+
+/* Section wrapper */
+#education {
+  padding: 60px 20px;
+   /* background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light background */
+  color: #003332;
+  text-align: center;
+}
+
+/* Section title */
+#education h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Vertical line in the middle */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;                 /* line in middle */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #003332;       /* teal line */
+  transform: translateX(-50%);
+}
+
+/* Timeline item wrapper */
+.timeline-item {
+  position: relative;
+  width: 50%;                /* half of container */
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+/* Alternate left and right */
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: left;
+
+.timeline-date{
+   
+  text-align: right;
+   
+}
+
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+/* Date styling */
+.timeline-date {
+  font-weight: bold;
+  color: #003332;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* Content box */
+.timeline-content {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: block;
+  max-width: 580px;
+
+  /* Start hidden & pushed down */
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When it scrolls into view */
+.timeline-content.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Small decorative circle */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  width: 16px;
+  height: 16px;
+  background: #003332;
+  border-radius: 50%;
+  border: 3px solid white;
+  z-index: 1;
+}
+
+/* Position circle on correct side */
+.timeline-item:nth-child(odd)::before {
+  right: -8px;  /* circle near middle line */
+}
+.timeline-item:nth-child(even)::before {
+  left: -8px;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+
+  #education h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline{
+
+  max-width: 1000px;
+}
+.timeline-content{
+
+  display:contents;
+}
+
+.timeline::before {
+  
+  width: 2.5px;
+ 
+}
+
+.timeline-content h3{
+
+  font-size: 1rem;
+}
+
+.timeline-item::before {
+  
+  width: 10px;
+  height: 10px;
+  
+}
+
+}
+
+/* languageeeee*/
+
+/* Section wrapper */
+#languages {
+  padding: 60px 20px;
+  text-align: center;
+ /*  background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light background */ 
+  color: #003332;
+}
+
+/* Section title */
+#languages h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #003332;
+  
+}
+
+
+.language {
+
+  margin-bottom: 25px;
+  text-align: left; /* keep label left aligned */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto; /* center inside page */
+
+}
+
+/* Language label */
+.language span {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+/* Outer empty bar */
+.progress-bar {
+  background: white; /* gray background */
+  border-radius: 20px;
+  height: 20px;
+   border: 1.8px solid #003332;
+  overflow: hidden; /* hides excess if bar grows */
+}
+
+/* Inner filled part of bar */
+.progress {
+  height: 100%;
+  border-radius: 20px;
+ 
+  
+  width: 0; /* start empty, animation will fill */
+   transition: width 2s ease; /* smooth animation */
+}
+
+/* Custom widths for each language */
+.german {
+  background: #e3b8b8;
+  animation-delay: 0.3s;
+  --target-width: 65%; /* B1 level */
+}
+.english {
+  background: #e3b8b8;
+  animation-delay: 0.6s;
+  --target-width: 90%; /* fluent */
+}
+.urdu {
+  background: #e3b8b8;
+  animation-delay: 0.9s;
+  --target-width: 100%; /* native */
+}
+
+
+
+/* =========================
+   Skills Section Styling
+   ========================= */
+#skills {
+  padding: 60px 20px;         /* spacing inside section (top/bottom: 60px, sides: 20px) */
+  text-align: center;         /* center-align the section title */
+  /* background: #f8f8f8;        /* light background to separate from other sections */
+  color: #003332;             /* dark green text for readability */
+}
+
+/* Section title */
+#skills h2 {
+  font-size: 2.5rem;          /* large font for the title */
+  margin-bottom: 40px;        /* spacing below title before cards start */
+}
+
+/* =========================
+   Skill Card Container
+   ========================= */
+.skill-card {
+  background: white;          /* white background for clean card look */
+  border-radius: 12px;        /* rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* soft shadow for "card" effect */
+  padding: 20px;              /* space inside card */
+  margin: 20px auto;          /* space outside card + center horizontally */
+  max-width: 500px;           /* limit card width (good for mobile + desktop) */
+  text-align: left;           /* align text left for easier reading */
+  opacity: 0;                 /* hidden initially for fade-in effect */
+  transform: translateY(30px);/* start slightly shifted down */
+  transition: all 0.6s ease;  /* smooth animation when it becomes visible */
+}
+
+/* When card becomes visible (we'll toggle this with JS later) */
+.skill-card.visible {
+  opacity: 1;                 /* fade in */
+  transform: translateY(0);   /* slide up into place */
+}
+
+/* =========================
+   Card Titles (h3)
+   ========================= */
+.skill-card h3 {
+  font-size: 1.8rem;          /* medium-large font */
+  margin-bottom: 15px;        /* space between title and list */
+  color: #003332;             /* purple color to make titles pop */
+}
+
+/* =========================
+   Skill List
+   ========================= */
+.skill-card ul {
+  list-style-type: disc;      /* bullet points */
+  padding-left: 20px;         /* indent bullets so they don’t stick to edge */
+  margin-bottom: 15px;        /* space after list before note */
+}
+
+.skill-card li {
+  font-size: 1.2rem;          /* readable font size */
+  margin-bottom: 8px;         /* space between each skill */
+}
+
+/* =========================
+   Small Note at Bottom
+   ========================= */
+.skill-card .note {
+  font-size: 0.9rem;          /* smaller font than rest */
+  color: #555;                /* grayish tone so it doesn’t dominate */
+  text-align: right;          /* align note to the right side */
+  font-style: italic;         /* make it feel like a hint */
+}
+
+
+
+
+
+/* ===== PROJECT SECTION ===== */
+
+/* Section wrapper */
+#projects {
+  padding: 60px 20px;         /* space around section (top/bottom 60px, sides 20px) */
+  text-align: center;         /* center the heading and intro text */
+  color: #003332;             /* same dark green text color you’ve been using */
+  background: linear-gradient(125deg, #003332,#034c36,#bdcdcf);
+}
+
+/* Section title */
+#projects h2 {
+  font-size: 2.5rem;          /* make "Projects" big */
+  margin-bottom: 20px;        /* little space below it */
+  color: #ffffff;
+}
+
+/* Intro paragraph under title */
+#projects p {
+  font-size: 1.2rem;          /* slightly bigger text for readability */
+  margin-bottom: 30px;        /* space before the box starts */
+  color: #ffffff;
+}
+
+/* The box around project list */
+.project-box {
+  max-width: 700px;           /* don’t let it stretch too wide on big screens */
+  margin: 0 auto;             /* center it horizontally */
+  padding: 20px;              /* space inside the box */
+  background: #ffffff;        /* white background so text is clear */
+  border: 1.5px solid #003332;/* thin border for outline */
+  border-radius: 10px;        /* soft rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow for a lifted look */
+  text-align: left;           /* keep bullets aligned to the left */
+  
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+  
+}
+.project-box.show{               /* this will trigger by java script */
+
+  opacity: 1;
+  transform: translateY(0);
+
+}
+
+
+/* Styling for the list */
+.project-box ul {
+  list-style-type: disc;      /* classic filled circle bullets */
+  padding-left: 20px;         /* indent so bullets don’t touch border */
+}
+
+/* Each list item */
+.project-box li {
+  font-size: 1.1rem;          /* nice readable size */
+  margin-bottom: 12px;        /* spacing between projects */
+  line-height: 1.6;           /* give some breathing room between lines */
+}
+
+#contact{
+
+  
+  background: linear-gradient(105deg, #034c36, #E3B8b8);
+  text-align: center;
+  padding: 60px 20px;
+
+}
+
+#contact h2{
+
+   font-size: 2.5rem;
+   font-family:sans-serif;
+   color: #003332;
+   margin-bottom: 20px;
+
+}
+
+#contact p{
+
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #003332;
+    
+
+}
+
+
+.but a{
+
+  display: inline-block;
+  font-size: 2.5rem;
+color: black;
+ opacity: 0;
+ transform: translateY(30px);
+ transition: all 1s ease-in-out;
+
+
+}
+
+.but a.up{
+
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+footer{
+
+  background: #003332;
+  
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 10px;
+  
+
+}
+
+
+
+
+
+
+
