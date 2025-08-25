@@ -428,12 +428,12 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
 #education h2 {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  position: relative;
+  position:relative;
 }
 
 /* Timeline container */
 .timeline {
-  position: relative;
+  position:relative;
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px 0;
@@ -467,6 +467,7 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
 .timeline-date{
    
   text-align: right;
+  margin-left: 100px;
    
 }
 
@@ -478,6 +479,7 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
 }
 
 /* Date styling */
+
 .timeline-date {
   font-weight: bold;
   color: #003332;
@@ -496,17 +498,22 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
 
   /* Start hidden & pushed down */
   opacity: 0;
-  transform: translateY(80px);
+  transform: translateX(-80px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 /* When it scrolls into view */
 .timeline-content.in-view {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
-
+.pushfromleft.in-view
+{
+   opacity: 1;
+   transform: translateX(80);
+    
+}
 /* Small decorative circle */
 .timeline-item::before {
   content: '';
@@ -528,17 +535,7 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
   left: -8px;
 }
 
-/* Animation keyframes */
-@keyframes fadeInUp {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+
 
 
 @media (max-width: 600px) {
@@ -550,15 +547,33 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
   position: relative;
 }
 
+
 .timeline{
 
   max-width: 1000px;
 }
-.timeline-content{
 
-  display:contents;
+
+.timeline-item{
+
+  
+  margin-left: -30px;
+ 
+  
 }
+.timeline-item1{
 
+  margin-left: -17px;
+}
+.timeline-item:nth-child(odd)::before {
+  right: -35px;  /* circle near middle line */
+}
+.timeline-item:nth-child(even)::before {
+  left: +20px;
+}
+.timeline-content{
+  display: inline-block;
+}
 .timeline::before {
   
   width: 2.5px;
@@ -852,6 +867,17 @@ footer{
 
 
 
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 
 
