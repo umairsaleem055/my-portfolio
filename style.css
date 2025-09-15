@@ -1,4 +1,4 @@
-/* ================= Reset & Basic ================= */
+/* ================= Reset & Basic ======= */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body {
     
 }
 
-/* ================= Header & Navigation ================= */
+/* ================= Header/Navigationnn ================= */
 header {
      height: 100vh; /* Full screen height */
     
@@ -31,21 +31,17 @@ header {
   background: linear-gradient(105deg, #e3b8b8, #003332 ) ; 
 }
 
-/* ================= NAVIGATION ================= */
+/* ================= NAVIGATION ========= */
 #navbar {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;             
   display: flex;
   justify-content: center;   /* center nav */
   align-items: center;       
   background: rgba(15,17,26,0.75); 
-  backdrop-filter: blur(6px);
   box-shadow: 0 4px 14px rgba(0,0,0,0.25);
   gap: 1rem;
-  padding: 0.8rem 1rem;
-  transition: all 0.3s ease-in-out;
+  padding: 16px;
   z-index: 1000;
   
 }
@@ -53,7 +49,7 @@ header {
 #navbar ul {
   list-style:none;
   display: flex;
-  gap: 2px;
+  gap: 10px;
   flex-direction: row;
  
 }
@@ -61,62 +57,58 @@ header {
 #navbar a {
   text-decoration: none;
   color: #ffffff;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
   white-space: nowrap;  /* prevents text breaking */
   padding: 6px 10px;      
   border-radius: 999px;    
-  transition: color .2s, background-color .2s, transform .2s;
 }
 
 #navbar a:hover {
-  color: #45d2d2;
-  background-color: rgba(69,210,210,0.1);
-  transform: translateY(-2px);
+  /* color: #45d2d2; */
+  color: #003332;
+  
+  background-color: rgba(240, 245, 245, 0.663);
+  
 }
 
-/* ===== Shrunk capsule state ===== */
+/* ===== Shrunk capsule state ==================== */
 #navbar.shrink {
   width: fit-content;   
-  top: 12px;
+  margin-top: 8px;
   left: 50%;
-  transform: translateX(-50%); /* center in screen */
-  padding: 0.4rem 0.8rem;
-  font-size: 0.85rem;
+  transform: translateX(-50%); /*     center in screen */
+  padding: 10px ;
   border-radius: 9999px; 
-  background: rgba(15,17,26,0.6);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  background: rgba(15, 17, 26, 0.663);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  
+  
 }
 
-#navbar.shrink ul { gap: 14px; }
 #navbar.shrink a {
+  
   font-size: 0.9rem;
-  padding: 4px 8px;
+  transition: all 0.3s ease-in-out;
+  
+  
 }
 
 /* ================= MOBILE ================= */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   #navbar {
     padding: 8px 6px;  
   }
 
-  #navbar ul {
-    flex-direction: row;   /* stack vertically */
-    align-items: center;      /* center align */
-    gap: 12px;                /* vertical spacing */
-  }
-
   #navbar a {
     font-size: 0.85rem;
-    padding: 4px 6px;   
-  }
+    padding: 4px 6px;  
+  } 
 
   #navbar.shrink a{
        
     font-size: 0.7rem;
-  padding: 3px 5px;
-      
-
+  padding: 1px 4px;   
   }
   
 }
@@ -189,11 +181,6 @@ header {
       align-items:  center;
  color: white;
 
-
-   
-
-
-
    font-size: 4rem;
   /* typewriter essentials */
   display: inline-block;        /* let width hug the text */
@@ -249,52 +236,50 @@ header {
 
 
 /* ====== ABOUT SECTION INTRO ====== */
+
+#about{
+  background: linear-gradient(105deg, #003332,#034c36,#bdcdcf);
+  overflow: hidden;
+}
+
 .intro-container {
   display: flex;
-  
    flex-direction: row; /* stack text and image on small screens */
-  justify-content:space-between;
-  align-items: stretch;   /* make text + image equal height */
   padding: 0;
-  min-height: 40vh;
   max-height: 50vh;
   max-width: 1000px;
   margin: 100px auto;
   border-radius: 20px;
   overflow: hidden; /* ensures shapes stay clean */
-   /* background: linear-gradient(90deg, #ff8128,#e3b8b8, #f2e0df);  */
-  background: linear-gradient(105deg, #e3b8b8, #003332 ) ; 
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2); /* ✨ card shadow */
+  background-color: white;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2); 
+  
 }
 
 /* Left block (text area) */
 .intro-text {
   flex: 1;
-  padding: 50px;
-  background: white; /* matches parent background */
+  padding: 40px;
+  background: white; /* matches parent background  ..........*/
 }
 
 .intro-heading {
   color: #003332;
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 15px;
+  font-size: clamp(25px, 2.4vw, 40px);                      
+  margin-bottom: 10px;
 }
 
 .intro-paragraph {
-  font-size: 1rem;
- 
-  
-  
-  
+  font-size: clamp(14px, 2vw, 20px);
   line-height: 1.3;
   color: #003332;
 }
 
 /* Right block (image with half-rounded shape) */
 .intro-image {
-  flex: 0 0 auto;   /* allow resizing */
-
+  flex: 0 0 300px;   /* allow resizing */
+  
   width: 50%;
    
   display: flex;
@@ -339,25 +324,19 @@ header {
 
 
 
-
-/* Tablets and below */
+/* 
+Tablets and below */
 @media (max-width: 1024px) {
-  #navbar {
-    padding: 12px 20px;
-  }
-  .intro-container {
-    flex-direction: row;
-  }
+ 
   .intro-text {
-    flex-direction: row;
-    padding: 20px;
+    padding: 25px;
   }
-}
+} 
 
 /* Phones */
 @media (max-width: 600px) {
   header {
-    height: 60vh; /* don’t force 100vh on small screens */
+    height: 80vh; /* don’t force 100vh on small screens */
     padding: 40px 20px;
   }
 
@@ -366,19 +345,22 @@ header {
   }
 .intro-container{
 
-    min-height: 20vh;
+    /* min-height: 20vh;
   max-height: 50vh;
-  max-width: 1000px;
+  max-width: 1000px; */
+
+  width: min(80%, 1200px);
+  height: max-content;
 
 
 }
 
-.intro-heading{
+/* .intro-heading{
    
   font-size: 1rem;
   margin-bottom: 10px;
 
-}
+} */
   .intro-paragraph{
 
    font-size: small;
@@ -609,9 +591,7 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
   font-size: 2.5rem;
   margin-bottom: 40px;
   color: #003332;
-  
 }
-
 
 .language {
 
@@ -620,7 +600,6 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
   max-width: 600px;
   margin-left: auto;
   margin-right: auto; /* center inside page */
-
 }
 
 /* Language label */
@@ -738,6 +717,12 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
   color: #555;                /* grayish tone so it doesn’t dominate */
   text-align: right;          /* align note to the right side */
   font-style: italic;         /* make it feel like a hint */
+}
+
+
+ .rulerline{           /*      the horizontal line between edycation and skill */
+  border: 1.3px solid #003332;
+  
 }
 
 
