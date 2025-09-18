@@ -13,22 +13,17 @@ body {
     
 }
 
-/* ================= Header/Navigationnn ================= */
+/* =======   Header/Navigationnn ================= */
 header {
-     height: 100vh; /* Full screen height */
-    
+
+    height: 100vh; /* Full screen height */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-  /*  background: linear-gradient(135deg, #1f1c2c, #928dab); /* modern gradient */
     color: white;
     font-family: Arial, sans-serif;
-   /* background: linear-gradient(135deg, #1a1a2e, #0f111a); /* soft gradient */
-  /* background: linear-gradient(135deg, #48b7d5, #295161); */
-   /*background: linear-gradient(105deg, #FF5A57, #FCCBF0); */
-   /* background: linear-gradient(90deg, #ff8128,#e3b8b8, #f2e0df); */
-  background: linear-gradient(105deg, #e3b8b8, #003332 ) ; 
+    background: linear-gradient(105deg, #e3b8b8, #003332 ) ; 
 }
 
 /* ================= NAVIGATION ========= */
@@ -65,14 +60,13 @@ header {
 }
 
 #navbar a:hover {
-  /* color: #45d2d2; */
+
   color: #003332;
-  
   background-color: rgba(240, 245, 245, 0.663);
   
 }
 
-/* ===== Shrunk capsule state ==================== */
+/* ===== Shrunk capsule using javascript ==================== */
 #navbar.shrink {
   width: fit-content;   
   margin-top: 8px;
@@ -94,7 +88,7 @@ header {
   
 }
 
-/* ================= MOBILE ================= */
+/* ================= MOBILE =============This is to make it responsive for mobile screen also*/
 @media (max-width: 600px) {
   #navbar {
     padding: 8px 6px;  
@@ -117,10 +111,10 @@ header {
 
 
 
-/* ================= Hero Content ================= */
+/* ================= Hero Content =================================== */
 
 .intro h1 {
-  font-size: clamp(1.8rem, 4vw, 5rem);
+  font-size: clamp(1.8rem, 4vw, 5rem);  /* This way text become resposive so need to use media queary for that */
   font-weight: bold;
   
   
@@ -162,14 +156,10 @@ header {
     gap: 15px;
 }
 
-
-
-
 .intro h2 {
     font-size: 3rem;
     color: #003332;
     display: flex;
- 
   animation: fadeUp 1s ease-in-out forwards;
   animation-delay: 0.5s;
   opacity: 0;
@@ -232,10 +222,7 @@ header {
 
 
 
-
-
-
-/* ====== ABOUT SECTION INTRO ====== */
+/* ====== ABOUT SECTION INTRO ====================== */
 
 #about{
   background: linear-gradient(105deg, #003332,#034c36,#bdcdcf);
@@ -299,7 +286,7 @@ header {
 }
 
 
-/* ===== Scroll Animation ===== */
+/* ===== Scroll Animation ====================== */
 .intro-animate {
   opacity: 0;
   transition: all 1s ease;
@@ -345,22 +332,12 @@ Tablets and below */
   }
 .intro-container{
 
-    /* min-height: 20vh;
-  max-height: 50vh;
-  max-width: 1000px; */
-
-  width: min(80%, 1200px);
+  width: min(80%, 1200px);  /* this makes the container responsive for small devices */
   height: max-content;
 
 
 }
 
-/* .intro-heading{
-   
-  font-size: 1rem;
-  margin-bottom: 10px;
-
-} */
   .intro-paragraph{
 
    font-size: small;
@@ -379,13 +356,10 @@ Tablets and below */
 }
 
 
-/* same colur for eduaction and language etc */
 
 #color{
 
-
-background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light background */
-
+background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same background for education skill and language */
 
 }
 
@@ -396,12 +370,11 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
 
 
 
-/* ================= EDUCATION TIMELINE ================= */
+/* ================= EDUCATION TIMELINE ====================================== */
 
-/* Section wrapper */
+/* Section  */
 #education {
   padding: 60px 20px;
-   /* background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light background */
   color: #003332;
   text-align: center;
 }
@@ -413,7 +386,7 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
   position:relative;
 }
 
-/* Timeline container */
+/* Timeline container    */
 .timeline {
   position:relative;
   max-width: 1100px;
@@ -429,11 +402,11 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
   top: 0;
   bottom: 0;
   width: 4px;
-  background: #003332;       /* teal line */
+  background: #003332;       
   transform: translateX(-50%);
 }
 
-/* Timeline item wrapper */
+/* Timeline item    wrapper */
 .timeline-item {
   position: relative;
   width: 50%;                /* half of container */
@@ -595,11 +568,12 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
 
 .language {
 
+
   margin-bottom: 25px;
   text-align: left; /* keep label left aligned */
   max-width: 600px;
   margin-left: auto;
-  margin-right: auto; /* center inside page */
+  margin-right: auto;         /*    center inside page */
 }
 
 /* Language label */
@@ -612,7 +586,7 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
 
 /* Outer empty bar */
 .progress-bar {
-  background: white; /* gray background */
+  background: white; 
   border-radius: 20px;
   height: 20px;
    border: 1.8px solid #003332;
@@ -620,11 +594,9 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
 }
 
 /* Inner filled part of bar */
-.progress {
+.progress {                 
   height: 100%;
   border-radius: 20px;
- 
-  
   width: 0; /* start empty, animation will fill */
    transition: width 2s ease; /* smooth animation */
 }
@@ -648,14 +620,13 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
 
 
 
-/* =========================
-   Skills Section Styling
-   ========================= */
+/* ==============Skills Section Styling ========================= */
+
+
 #skills {
-  padding: 60px 20px;         /* spacing inside section (top/bottom: 60px, sides: 20px) */
-  text-align: center;         /* center-align the section title */
-  /* background: #f8f8f8;        /* light background to separate from other sections */
-  color: #003332;             /* dark green text for readability */
+  padding: 60px 20px;         
+  text-align: center;                
+  color: #003332;             
 }
 
 /* Section title */
@@ -664,9 +635,7 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
   margin-bottom: 40px;        /* spacing below title before cards start */
 }
 
-/* =========================
-   Skill Card Container
-   ========================= */
+/* =================Skill Card Container================================ */
 .skill-card {
   background: white;          /* white background for clean card look */
   border-radius: 12px;        /* rounded corners */
@@ -686,9 +655,7 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light backgrou
   transform: translateY(0);   /* slide up into place */
 }
 
-/* =========================
-   Card Titles (h3)
-   ========================= */
+/* ========================Card Titles (h3)============ */
 .skill-card h3 {
   font-size: 1.8rem;          /* medium-large font */
   margin-bottom: 15px;        /* space between title and list */
