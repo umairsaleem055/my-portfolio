@@ -355,7 +355,7 @@ Tablets and below */
 #color{
 
 background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same background for education skill and language */
-
+overflow: hidden;
 }
 
 
@@ -387,7 +387,7 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px 0;
-  overflow: hidden;
+  
 }
 
 
@@ -780,6 +780,7 @@ footer{
     opacity: 1;
   }
 }
+
 
 
 
