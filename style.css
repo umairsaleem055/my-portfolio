@@ -121,11 +121,7 @@ header {
   margin: 10px 0;
 }
 
-.intro h2,
-.intro h3,
-.intro p {
-  margin: 5px 0;
-}
+
 
 @keyframes fadeUp {
   from {
@@ -194,7 +190,7 @@ header {
 .intro p {
     font-size: clamp(1rem, 2vw, 2rem);
     display: flex;
-    justify-content: left;
+    justify-content: center;
   animation: fadeUp 2s ease-in-out forwards;
   animation-delay: 1.5s;
   opacity: 0;
@@ -231,23 +227,23 @@ header {
 
 .intro-container {
   display: flex;
-   flex-direction: row; /* stack text and image on small screens */
+   flex-direction: row; 
   padding: 0;
   max-height: 50vh;
   max-width: 1000px;
   margin: 100px auto;
   border-radius: 20px;
-  overflow: hidden; /* ensures shapes stay clean */
+  overflow: hidden; 
   background-color: white;
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2); 
   
 }
 
-/* Left block (text area) */
+/* Left text areaaaaa */
 .intro-text {
   flex: 1;
   padding: 40px;
-  background: white; /* matches parent background  ..........*/
+  background: white; 
 }
 
 .intro-heading {
@@ -268,11 +264,10 @@ header {
   flex: 0 0 300px;   /* allow resizing */
   
   width: 50%;
-   
   display: flex;
   align-items:flex-end;
   justify-content: flex-end;
-  background: white; /* same as parent */
+  background: white; 
 }
 
 .intro-image img.intro-profile {
@@ -372,7 +367,7 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
 
 /* ================= EDUCATION TIMELINE ====================================== */
 
-/* Section  */
+
 #education {
   padding: 60px 20px;
   color: #003332;
@@ -392,13 +387,14 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px 0;
+  overflow: hidden;
 }
 
-/* Vertical line in the middle */
-.timeline::before {
+
+.timeline::before {     /* line in middle */
   content: '';
   position: absolute;
-  left: 50%;                 /* line in middle */
+  left: 50%;                 
   top: 0;
   bottom: 0;
   width: 4px;
@@ -410,7 +406,8 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
 .timeline-item {
   position: relative;
   width: 50%;                /* half of container */
-  padding: 20px 40px;
+  max-width: 550px;
+  padding: 20px 20px;
   box-sizing: border-box;
 }
 
@@ -418,12 +415,13 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
 .timeline-item:nth-child(odd) {
   left: 0;
   text-align: left;
+.timeline-content{
+  transform: translateX(-120px);
+  opacity: 0;
+}
 
-.timeline-date{
-   
+.timeline-date{ 
   text-align: right;
-  margin-left: 100px;
-   
 }
 
 }
@@ -431,6 +429,11 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
 .timeline-item:nth-child(even) {
   left: 50%;
   text-align: left;
+
+.timeline-content{
+  transform: translateX(+120px);
+  opacity: 0;
+}  
 }
 
 /* Date styling */
@@ -439,36 +442,34 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
   font-weight: bold;
   color: #003332;
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-size: clamp(7px,3vw,22px);
 }
 
 /* Content box */
 .timeline-content {
   background: white;
+  font-size: clamp(7px, 2.5vw, 16px);
   padding: 15px 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: block;
   max-width: 580px;
 
-  /* Start hidden & pushed down */
-  opacity: 0;
-  transform: translateX(-80px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  
+  transition: all 0.8s ease;
 }
 
-/* When it scrolls into view */
-.timeline-content.in-view {
+.timeline-content h3{
+  font-size: clamp(8px, 3vw, 20px);
+}
+
+/* in-view javascript class add */
+.timeline-item .timeline-content.in-view {
   opacity: 1;
   transform: translateX(0);
 }
 
-.pushfromleft.in-view
-{
-   opacity: 1;
-   transform: translateX(80);
-    
-}
+
 /* Small decorative circle */
 .timeline-item::before {
   content: '';
@@ -482,19 +483,15 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
   z-index: 1;
 }
 
-/* Position circle on correct side */
+/* position circle on corect side */
 .timeline-item:nth-child(odd)::before {
-  right: -8px;  /* circle near middle line */
+  right: -8px;  
 }
 .timeline-item:nth-child(even)::before {
   left: -8px;
 }
 
-
-
-
 @media (max-width: 600px) {
-
 
   #education h2 {
   font-size: 2.5rem;
@@ -502,60 +499,15 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
   position: relative;
 }
 
-
-.timeline{
-
-  max-width: 1000px;
 }
 
-
-.timeline-item{
-
-  
-  margin-left: -30px;
- 
-  
-}
-.timeline-item1{
-
-  margin-left: -17px;
-}
-.timeline-item:nth-child(odd)::before {
-  right: -35px;  /* circle near middle line */
-}
-.timeline-item:nth-child(even)::before {
-  left: +20px;
-}
-.timeline-content{
-  display: inline-block;
-}
-.timeline::before {
-  
-  width: 2.5px;
- 
-}
-
-.timeline-content h3{
-
-  font-size: 1rem;
-}
-
-.timeline-item::before {
-  
-  width: 10px;
-  height: 10px;
-  
-}
-
-}
 
 /* languageeeee*/
 
-/* Section wrapper */
+
 #languages {
   padding: 60px 20px;
   text-align: center;
- /*  background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* light background */ 
   color: #003332;
 }
 
@@ -570,10 +522,10 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
 
 
   margin-bottom: 25px;
-  text-align: left; /* keep label left aligned */
+  text-align: left; 
   max-width: 600px;
   margin-left: auto;
-  margin-right: auto;         /*    center inside page */
+  margin-right: auto;        
 }
 
 /* Language label */
@@ -590,7 +542,7 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
   border-radius: 20px;
   height: 20px;
    border: 1.8px solid #003332;
-  overflow: hidden; /* hides excess if bar grows */
+  overflow: hidden; 
 }
 
 /* Inner filled part of bar */
@@ -598,29 +550,29 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
   height: 100%;
   border-radius: 20px;
   width: 0; /* start empty, animation will fill */
-   transition: width 2s ease; /* smooth animation */
+   transition: width 2s ease; 
 }
 
-/* Custom widths for each language */
+
 .german {
   background: #e3b8b8;
   animation-delay: 0.3s;
-  --target-width: 65%; /* B1 level */
+  
 }
 .english {
   background: #e3b8b8;
   animation-delay: 0.6s;
-  --target-width: 90%; /* fluent */
+ 
 }
 .urdu {
   background: #e3b8b8;
   animation-delay: 0.9s;
-  --target-width: 100%; /* native */
+  
 }
 
 
 
-/* ==============Skills Section Styling ========================= */
+/* ==============Skillllllllllllllls ========================= */
 
 
 #skills {
@@ -629,65 +581,63 @@ background: linear-gradient(105deg, #034c36, #E3B8b8 ) ;       /* same backgroun
   color: #003332;             
 }
 
-/* Section title */
+
 #skills h2 {
-  font-size: 2.5rem;          /* large font for the title */
-  margin-bottom: 40px;        /* spacing below title before cards start */
+  font-size: 2.5rem;          
+  margin-bottom: 40px;        
 }
-
-/* =================Skill Card Container================================ */
+/* =================Skill Card Container==== */
 .skill-card {
-  background: white;          /* white background for clean card look */
-  border-radius: 12px;        /* rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* soft shadow for "card" effect */
-  padding: 20px;              /* space inside card */
-  margin: 20px auto;          /* space outside card + center horizontally */
-  max-width: 500px;           /* limit card width (good for mobile + desktop) */
-  text-align: left;           /* align text left for easier reading */
-  opacity: 0;                 /* hidden initially for fade-in effect */
-  transform: translateY(30px);/* start slightly shifted down */
-  transition: all 0.6s ease;  /* smooth animation when it becomes visible */
+  background: white;
+  border-radius: 12px;        
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); 
+  padding: 20px;             
+  margin: 20px auto;         
+  max-width: 550px;           
+  text-align: left;           
+  opacity: 0;                 
+  transform: translateY(30px);
+  transition: all 0.6s ease;  
 }
 
-/* When card becomes visible (we'll toggle this with JS later) */
+  /* visible javascript class added */
 .skill-card.visible {
-  opacity: 1;                 /* fade in */
-  transform: translateY(0);   /* slide up into place */
+  opacity: 1;                 
+  transform: translateY(0);  
 }
 
-/* ========================Card Titles (h3)============ */
+/* ========================Card Titles============ */
 .skill-card h3 {
-  font-size: 1.8rem;          /* medium-large font */
-  margin-bottom: 15px;        /* space between title and list */
-  color: #003332;             /* purple color to make titles pop */
+  font-size: clamp(23px, 4vw, 30px);          
+  margin-bottom: 15px;        
+  color: #003332;             
 }
 
-/* =========================
-   Skill List
-   ========================= */
+/* =========================Skill List */
 .skill-card ul {
-  list-style-type: disc;      /* bullet points */
-  padding-left: 20px;         /* indent bullets so they don’t stick to edge */
-  margin-bottom: 15px;        /* space after list before note */
+  list-style-type:disc ;      
+  padding-left: 15px;         
+  margin-bottom: 15px;        
 }
 
 .skill-card li {
-  font-size: 1.2rem;          /* readable font size */
-  margin-bottom: 8px;         /* space between each skill */
+
+  font-size: clamp(10px,4vw, 18px);         
+  margin-bottom: 8px;         
+  
 }
 
-/* =========================
-   Small Note at Bottom
-   ========================= */
+
+/* ==================Small Note at Bottom */
 .skill-card .note {
-  font-size: 0.9rem;          /* smaller font than rest */
-  color: #555;                /* grayish tone so it doesn’t dominate */
-  text-align: right;          /* align note to the right side */
-  font-style: italic;         /* make it feel like a hint */
+  font-size: 0.9rem;          
+  color: #555;                
+  text-align: right;          
+  font-style: italic;        
 }
 
 
- .rulerline{           /*      the horizontal line between edycation and skill */
+ .rulerline{              /*  the horizontal line between edycation and skill */
   border: 1.3px solid #003332;
   
 }
