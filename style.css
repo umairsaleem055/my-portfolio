@@ -431,6 +431,7 @@ overflow: hidden;
   text-align: left;
 
 .timeline-content{
+  
   transform: translateX(+120px);
   opacity: 0;
 }  
@@ -442,25 +443,28 @@ overflow: hidden;
   font-weight: bold;
   color: #003332;
   margin-bottom: 10px;
-  font-size: clamp(7px,3vw,22px);
+  font-size: clamp(16px,3vw,22px);
 }
 
 /* Content box */
 .timeline-content {
   background: white;
-  font-size: clamp(7px, 2.5vw, 16px);
+  font-size: clamp(11px, 2.5vw, 16px);
   padding: 15px 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: block;
-  max-width: 580px;
-
-  
+  max-width: 580px;  
   transition: all 0.8s ease;
 }
 
+.timeline-content p{
+  margin-bottom: 5px;
+}
+
 .timeline-content h3{
-  font-size: clamp(8px, 3vw, 20px);
+  font-size: clamp(13px, 2.5vw, 20px);
+  margin-bottom: 5px;
 }
 
 /* in-view javascript class add */
@@ -780,7 +784,6 @@ footer{
     opacity: 1;
   }
 }
-
 
 
 
