@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-const boxes = document.querySelector(".project-box");    // this will search the html file look for class(.project-box) and put it in the const (boxex) we an give any name
+const boxes = document.querySelectorAll(".projectbox");    // this will search the html file look for class(.project-box) and put it in the const (boxex) we an give any name
 
 const observer = new IntersectionObserver(
   
@@ -121,7 +121,7 @@ const observer = new IntersectionObserver(
 }
 
 );
-observer.observe(boxes);
+boxes.forEach(ol => observer.observe(ol));
 
 
 

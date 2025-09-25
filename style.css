@@ -8,7 +8,7 @@
 body {
     font-family: 'Arial', sans-serif;
    /* background: linear-gradient(105deg, #6700a3,#e02f75, #ff5a57, #fccbf0); */
-    background: linear-gradient(105deg, #003332,#034c36,#bdcdcf);
+    background: linear-gradient(105deg, #003332,#034c36);
      color: #e0e0e0; 
     
 }
@@ -165,7 +165,18 @@ header {
       font-family: 'Montserrat', sans-serif; /* your font */
       font-weight: bold;
       align-items:  center;
- color: white;
+ /* color: white; */
+
+
+
+
+
+
+
+
+
+
+ 
 
    font-size: 4rem;
   /* typewriter essentials */
@@ -512,14 +523,15 @@ overflow: hidden;
 #languages {
   padding: 60px 20px;
   text-align: center;
-  color: #003332;
+  color: white;
+  background: linear-gradient(105deg, #003332,#034c36);
 }
 
 /* Section title */
 #languages h2 {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #003332;
+  color: #E3B8b8;
 }
 
 .language {
@@ -537,15 +549,15 @@ overflow: hidden;
   font-weight: bold;
   display: block;
   margin-bottom: 8px;
-  font-size: 1.5rem;
+  font-size: clamp(19px, 2.5vw, 22px);
 }
 
 /* Outer empty bar */
 .progress-bar {
-  background: white; 
+  background: rgba(255, 255, 255, 0.707); 
   border-radius: 20px;
   height: 20px;
-   border: 1.8px solid #003332;
+   /* border: 1px solid black; */
   overflow: hidden; 
 }
 
@@ -555,21 +567,26 @@ overflow: hidden;
   border-radius: 20px;
   width: 0; /* start empty, animation will fill */
    transition: width 2s ease; 
+   overflow: hidden;
 }
 
 
 .german {
-  background: #e3b8b8;
+  background: #cf9292;
+  border: 2px solid #003332;
   animation-delay: 0.3s;
+  
   
 }
 .english {
-  background: #e3b8b8;
+  background: #cf9292;;
+  border: 2px solid #003332;
   animation-delay: 0.6s;
  
 }
 .urdu {
-  background: #e3b8b8;
+  background: #cf9292;;
+  border: 2px solid #003332;
   animation-delay: 0.9s;
   
 }
@@ -646,74 +663,172 @@ overflow: hidden;
   
 }
 
-
+.skill-card:hover{
+  box-shadow: 0 0 10px white;
+}
 
 
 
 /* ===== PROJECT SECTION ===== */
 
 /* Section wrapper */
-#projects {
-  padding: 60px 20px;         /* space around section (top/bottom 60px, sides 20px) */
-  text-align: center;         /* center the heading and intro text */
-  color: #003332;             /* same dark green text color you’ve been using */
-  background: linear-gradient(125deg, #003332,#034c36,#bdcdcf);
-}
+#projects{
 
-/* Section title */
-#projects h2 {
-  font-size: 2.5rem;          /* make "Projects" big */
-  margin-bottom: 20px;        /* little space below it */
-  color: #ffffff;
-}
-
-/* Intro paragraph under title */
-#projects p {
-  font-size: 1.2rem;          /* slightly bigger text for readability */
-  margin-bottom: 30px;        /* space before the box starts */
-  color: #ffffff;
-}
-
-/* The box around project list */
-.project-box {
-  max-width: 700px;           /* don’t let it stretch too wide on big screens */
-  margin: 0 auto;             /* center it horizontally */
-  padding: 20px;              /* space inside the box */
-  background: #ffffff;        /* white background so text is clear */
-  border: 1.5px solid #003332;/* thin border for outline */
-  border-radius: 10px;        /* soft rounded corners */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow for a lifted look */
-  text-align: left;           /* keep bullets aligned to the left */
-  
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s ease-out;
+  color: black;
+  height: max-content;
+  padding: 40px;
+  text-align: center;
   
 }
-.project-box.show{               /* this will trigger by java script */
-
-  opacity: 1;
-  transform: translateY(0);
-
+#projects h2{
+  font-size: 2.5rem;
+  color: #E3B8b8;
+  padding: 20px;
+}
+#projects h6{
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.projectboxes{
+  
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  gap: 10px;
+}
+.projectboxes h5{
+  font-size: clamp(16px, 2.5vw, 21px);
+  padding: 5px 10px;
+}
+.projectboxes p{
+  font-size: clamp(11px, 2.5vw, 16px);
+  padding: 0 10px;
+  line-height: 1.3rem;
+  color: #003332;
+  font-weight: 600;
+}
+.project-box1 p{
+  margin-bottom: -7px;
+}
+.project-box1{
+ 
+  flex: 1;
+  background-color: #e3b8b8be;
+  display: flex;
+  max-width: 400px;
+  height: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+  padding-bottom: 22px;
+}
+.project-box2{
+  flex: 1;
+  background-color: #e3b8b8be;
+  display: flex;
+  height: 100%;
+  padding-bottom: 22px;
+  max-width: 400px;
+  border-radius: 10px;
+  align-items: flex-start;
+  flex-direction: column;
+  box-shadow: 0 0 10px black;
 }
 
 
-/* Styling for the list */
-.project-box ul {
-  list-style-type: disc;      /* classic filled circle bullets */
-  padding-left: 20px;         /* indent so bullets don’t touch border */
+.project-box3{
+  flex: 1;
+  background-color: #e3b8b8be;
+  display: flex;
+  max-width: 400px;
+  height: 100%;
+  padding-bottom: 22px;
+  align-items: flex-start;
+  flex-direction: column;
+  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* Each list item */
-.project-box li {
-  font-size: 1.1rem;          /* nice readable size */
-  margin-bottom: 12px;        /* spacing between projects */
-  line-height: 1.6;           /* give some breathing room between lines */
+.port{
+  
+  width: 100% ;
+  border-radius: 10px 10px 0 0;
+  height: auto;
+  border: 2px solid #e3b8b899;
+  filter: contrast(130%);
 }
+
+.projectboxes a{
+  font-style: none;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  background-color: #003332;
+  border-radius: 30px;
+  margin-left: 10px;
+  margin-top: 20px; 
+  box-shadow: 0 6px 3px black; 
+  display: inline-block;
+}
+
+.projectboxes a:active{
+
+  transform: translateY(6px);
+  box-shadow: 0 0 0;
+  
+}
+
+/* for makinging resposive in  small screen stacking the projects vertically */
+
+@media (max-width : 800px) {
+
+.projectboxes{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projectboxes p{
+  line-height: 0.9rem;
+}
+.project-box1{
+  max-width: 300px;
+}
+.project-box2{
+  max-width: 300px;
+}
+.project-box3{
+  max-width: 300px;
+}
+#projects{
+  height: max-content;
+}
+
+}
+
+.projectbox{
+  /* transform: translateX(-100px); */
+  transform: rotateY(-180deg);
+    opacity: 0;
+  transition: all 0.5s ease-in-out;
+  
+}
+.projectbox.show{
+  /* transform: translateX(0); */
+  transform: rotateY(0deg);
+     opacity: 1;
+}
+
+
+
+
+
+/* contact last section */
 
 #contact{
-
-  
   background: linear-gradient(105deg, #034c36, #E3B8b8);
   text-align: center;
   padding: 60px 20px;
